@@ -1,0 +1,36 @@
+body{
+  background-color: aqua;
+  background-image: url(../image/fiber-pattern-paper-background.jpg);
+}
+
+h1{
+  font-family: 'Montserrat', sans-serif;
+  font-size: 70px;
+  text-align: center;
+}
+
+
+.about-groop{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+}
+
+.people{
+  font-weight: 900;
+  font-size: 20px;
+  font-family: 'Montserrat', sans-serif;
+}
+.people h2{
+  font-size: 50px;
+}
+
+.about-people p{
+  max-width: 600px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 50px;
+  font-weight: 700;
+
+
+}
