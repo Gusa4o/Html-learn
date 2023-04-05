@@ -1,31 +1,31 @@
 body{
-background-color: antiquewhite;
-}
-h1{
-  text-align: center;
-  font-family: 'Montserrat', sans-serif;
-
-}
-
-.animal-img{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 0 60px;
-}
-.animal p{
-  font-family: 'Montserrat', sans-serif;
-  font-size: 30px;
- 
-}
-
-.animal{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  border: 3px solid #000;
-}
-.animal img{
-  width: 550px;
-  height: 270px;
-}
+  background-color: antiquewhite;
+  }
+  h1{
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    
+  }
+  
+  .animal-img{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 60px;
+  }
+  .animal p{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 30px;
+   
+  }
+  
+  .animal{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 3px solid #000;
+  }
+  .animal img{
+    width: 550px;
+    height: 270px;
+  }
