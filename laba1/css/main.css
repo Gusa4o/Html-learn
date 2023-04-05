@@ -17,3 +17,8 @@ body{
 footer{
  text-align: right;
 }
+
+.link {
+  color: black;
+  text-decoration: none;
+}
