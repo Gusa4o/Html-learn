@@ -1,4 +1,5 @@
 body{
+<<<<<<< HEAD
   background-color: antiquewhite;
   }
   h1{
@@ -29,3 +30,35 @@ body{
     width: 550px;
     height: 270px;
   }
+=======
+background-color: antiquewhite;
+}
+h1{
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+
+}
+
+.animal-img{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0 60px;
+}
+.animal p{
+  font-family: 'Montserrat', sans-serif;
+  font-size: 30px;
+ 
+}
+
+.animal{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 3px solid #000;
+}
+.animal img{
+  width: 550px;
+  height: 270px;
+}
+>>>>>>> fd52b536b0a8bcf09b75907603f59f160e2d0c19
