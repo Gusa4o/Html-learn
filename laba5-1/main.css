@@ -31,7 +31,6 @@ p {
 }
 
 
-
 .tabs__nav-btn:hover {
   background-color: #ddd;
 }
@@ -45,6 +44,7 @@ p {
 .tabs__content {
   padding: 30px;
   background-color: #fff;
+  width: 748px;
   
 }
 
@@ -72,8 +72,6 @@ p {
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   color: rgb(26, 20, 31);
   max-width: 900px;
-  line-height: 2;
-  text-align: justify;
   margin:10px auto;
   border-radius: 20px;  
 }
