@@ -30,9 +30,7 @@ p {
   cursor: pointer;
 }
 
-.tabs__nav-btn:last-child {
-  border-right: none;
-}
+
 
 .tabs__nav-btn:hover {
   background-color: #ddd;
@@ -47,6 +45,7 @@ p {
 .tabs__content {
   padding: 30px;
   background-color: #fff;
+  
 }
 
 .tabs__item {
@@ -60,11 +59,35 @@ p {
   display: block;
 }
 .tabs__nav-btn img{
-  height: 39.3px;
-  width: 39.3px;
+  height: 40px;
+  width: 40px;
   
 }
 .tabs__item a{
   text-decoration: none;
   color: #121212;
+}
+.bottom{
+  background-color: rgb(107, 104, 99);
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  color: rgb(26, 20, 31);
+  max-width: 900px;
+  line-height: 2;
+  text-align: justify;
+  margin:10px auto;
+  border-radius: 20px;  
+}
+
+ .bottom h1, h2{
+   text-align: center;
+   font-weight: bold;
+   
+ }
+.bottom footer{
+ text-align: right;
+}
+
+.link {
+  color: black;
+  text-decoration: none;
 }
