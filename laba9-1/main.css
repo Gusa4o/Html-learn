@@ -1,0 +1,43 @@
+body{
+  font-family: 'Montserrat', sans-serif;
+
+  background-image: url(image/back.jpg);
+}
+
+.conteiner{
+  max-width: 1200px;
+  padding-left: 15px;
+  padding-right: 15px;
+  text-indent: 2%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.header{
+  text-align: center;
+}
+
+.abzac{
+  text-align: center;
+  font-size: 25px;
+  
+}
+
+.discription__one{
+font-size: 35px;
+color: bisque;
+}
+
+.discription__two{
+font-size: 35px;
+color: gray;
+}
+
+.discription__three{
+font-size: 35px;
+color: white;
+}
+
+b{
+  color: rgb(87, 87, 252);
+}

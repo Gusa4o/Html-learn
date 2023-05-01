@@ -1,0 +1,18 @@
+body{
+  background-image: url(image/back.jpg);
+  font-family: 'Montserrat', sans-serif;
+}
+h1 {font-size: 30pt;
+  color: BlanchedAlmond;
+text-align: justify;
+  font-family: Segoe Script}
+p { 
+  font-family: ;
+  font-style: italic;
+  color: Brown;
+  text-indent: 20%;
+}
+.conteiner{
+  max-width: 1200px;
+}
+
