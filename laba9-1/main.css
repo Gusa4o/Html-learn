@@ -31,11 +31,15 @@ color: bisque;
 .discription__two{
 font-size: 35px;
 color: gray;
+margin: 15px 10px 15px 10px;
 }
 
 .discription__three{
 font-size: 35px;
 color: white;
+background-color: aqua;
+border-radius: 20px;
+
 }
 
 b{
