@@ -1,90 +1,91 @@
-function вивестиПоточнийЧас() {
-    let поточнийЧас = new Date();
-  
-    let години = поточнийЧас.getHours();
-    let хвилини = поточнийЧас.getMinutes();
-    let секунди = поточнийЧас.getSeconds();
-  
-    // Додавання нуля перед однозначними числами
-    години = (години < 10 ? "0" : "") + години;
-    хвилини = (хвилини < 10 ? "0" : "") + хвилини;
-    секунди = (секунди < 10 ? "0" : "") + секунди;
-  
-    let дніТижня = ['неділя', 'понеділок', 'вівторок', 'середа', 'четвер', 'пʼятниця', 'субота'];
-    let деньТижня = дніТижня[поточнийЧас.getDay()];
-  
-    let дніМісяця = поточнийЧас.getDate();
-    let місяці = ['січня', 'лютого', 'березня', 'квітня', 'травня', 'червня', 'липня', 'серпня', 'вересня', 'жовтня', 'листопада', 'грудня'];
-    let місяць = місяці[поточнийЧас.getMonth()];
-  
-    let рік = поточнийЧас.getFullYear();
-  
-    let форматованийЧас = години + ":" + хвилини + ":" + секунди + ", " + деньТижня + ", " + дніМісяця + " " + місяць + " " + рік + " року";
-  
-    console.log(форматованийЧас);
-  
-    return форматованийЧас;
-  }
-  
-  // Виклик функції
-  вивестиПоточнийЧас();
+function getCurrentTime() {
+  let currentTime = new Date();
 
-  function вгадайЧисло() {
-    let граємо = true;
-  
-    while (граємо) {
-      let загаданеЧисло = Math.floor(Math.random() * 101); // Генеруємо випадкове число від 0 до 100
-      let спроби = 0;
-  
-      while (true) {
-        спроби++;
-        let введенеКористувача = prompt("Вгадайте число від 0 до 100:");
-  
-        if (введенеКористувача === null) {
-          // Користувач натиснув "Скасувати"
-          граємо = false;
-          break;
+  let hours = currentTime.getHours();
+  let minutes = currentTime.getMinutes();
+  let seconds = currentTime.getSeconds();
+
+  // Adding leading zeros to single-digit numbers
+  hours = (hours < 10 ? "0" : "") + hours;
+  minutes = (minutes < 10 ? "0" : "") + minutes;
+  seconds = (seconds < 10 ? "0" : "") + seconds;
+
+  let weekdays = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+  let dayOfWeek = weekdays[currentTime.getDay()];
+
+  let dayOfMonth = currentTime.getDate();
+  let months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+  let month = months[currentTime.getMonth()];
+
+  let year = currentTime.getFullYear();
+
+  let formattedTime = hours + ":" + minutes + ":" + seconds + ", " + dayOfWeek + ", " + month + " " + dayOfMonth + ", " + year;
+
+  console.log(formattedTime);
+
+  return formattedTime;
+}
+
+// Function call
+getCurrentTime();
+
+function guessNumber() {
+  let playing = true;
+
+  while (playing) {
+    let randomNumber = Math.floor(Math.random() * 101); // Generate a random number from 0 to 100
+    let attempts = 0;
+
+    while (true) {
+      attempts++;
+      let userGuess = prompt("Guess a number from 0 to 100:");
+
+      if (userGuess === null) {
+        // User clicked "Cancel"
+        playing = false;
+        break;
+      } else {
+        let guess = parseInt(userGuess);
+        if (isNaN(guess)) {
+          alert("Please enter a numeric value!");
         } else {
-          let вгадка = parseInt(введенеКористувача);
-          if (isNaN(вгадка)) {
-            alert("Будь ласка, введіть числове значення!");
+          if (guess === randomNumber) {
+            console.log(`${new Date().toLocaleString()} Attempt ${attempts}: Number ${guess} - correct`);
+            alert(`Congratulations! You guessed the number in ${attempts} attempts! The secret number was: ${randomNumber}`);
+            break;
           } else {
-            if (вгадка === загаданеЧисло) {
-              console.log(`${new Date().toLocaleString()} Спроба ${спроби}: число ${вгадка} – вірно`);
-              alert(`Вітаємо! Ви вгадали число за ${спроби} спроб! Загадане число: ${загаданеЧисло}`);
-              break;
+            let deviation = Math.abs(guess - randomNumber);
+            let response = "";
+
+            if (deviation < 10) {
+              response = "Very hot!";
+            } else if (deviation < 20) {
+              response = "Hot!";
+            } else if (deviation < 30) {
+              response = "Warm";
+            } else if (deviation < 50) {
+              response = "Warmer";
             } else {
-              let відхилення = Math.abs(вгадка - загаданеЧисло);
-              let відповідь = "";
-  
-              if (відхилення < 10) {
-                відповідь = "Дуже гаряче!";
-              } else if (відхилення < 20) {
-                відповідь = "Гаряче!";
-              } else if (відхилення < 30) {
-                відповідь = "Тепло";
-              } else if (відхилення < 50) {
-                відповідь = "Тепліше";
-              } else {
-                відповідь = "Холодніше";
-              }
-  
-              console.log(`${new Date().toLocaleString()} Спроба ${спроби}: число ${вгадка} – не вірно`);
-              alert(`Ви не вгадали. ${відповідь} Спробуйте ще раз!`);
+              response = "Colder";
             }
+
+            console.log(`${new Date().toLocaleString()} Attempt ${attempts}: Number ${guess} - incorrect`);
+            alert(`You didn't guess. ${response} Try again!`);
           }
         }
       }
-  
-      if (!граємо) {
-        break;
-      }
-  
-      let зігратиЩеРаз = confirm("Зіграємо ще раз?");
-      if (!зігратиЩеРаз) {
-        break;
-      }
     }
-}  
-// Виклик функції
-вгадайЧисло();  
+
+    if (!playing) {
+      break;
+    }
+
+    let playAgain = confirm("Play again?");
+    if (!playAgain) {
+      break;
+    }
+  }
+}
+
+// Function call
+guessNumber();

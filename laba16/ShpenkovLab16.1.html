@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dynamic Web Pages</title>
+    <style>
+        .green-border {
+            border: 2px solid green;
+        }
+
+        .red-border {
+            border: 2px solid red;
+        }
+    </style>
+</head>
+<body>
+<h1>Dynamic Web Pages</h1>
+
+<h2>Task 1</h2>
+<img id="Cat" src="_109474669_p07rywx2.jpg" width="400" height="300">
+<img id="Home cat" src="14_a8db1.jpg" width="400" height="300">
+<img id="Happy cat" src="7f87247-kit-golov.jpg" width="400" height="300">
+
+<h2>Task 2</h2>
+<a href="https://example.com" id="https://example.com">Link 1</a>
+<a href="https://google.com" id="https://google.com">Link 2</a>
+<a href="https://yahoo.com" id="https://yahoo.com">Link 3</a>
+<h2>Task 3</h2>
+<a href="https://example.com" id="https://example.com">Link 4</a>
+<a href="https://google.com" id="https://google.com">Link 5</a>
+<a href="https://yahoo.com" id="https://yahoo.com">Link 6</a>
+
+<h2>Task 4</h2>
+<input type="Коти є одними з найпопулярніших домашніх тварин у світі. Вони мають довгу історію спільного життя з людьми, починаючи зі стародавніх цивілізацій, таких як давні єгиптяни." id="input2">
+<input type="У котів є велика різноманітність кольорів і малюнків шерсті. Їх можна зустріти в різних відтінках сірого, чорного, білого, рудого, трьохкольорових та багатьох інших комбінаціях." id="input2">
+<input type="Коти сплять багато годин на день. В середньому вони сплять від 12 до 16 годин на добу, але цей час може змінюватися залежно від віку, активності та здоров'я." id="input3" data-length="5">
+
+<h2>Task 5</h2>
+<input type="text" id="input4" data-length="10">
+<input type="text" id="input5" data-length="10">
+<input type="text" id="input6" data-length="10">
+
+<h2>Task 6</h2>
+<input type="text" id="input7" value="Input 1">
+<input type="text" id="input8" value="Input 2">
+<input type="text" id="input9" value="Input 3">
+
+<h2>Task 7</h2>
+<p id="number1">2</p>
+<p id="number2">5</p>
+<p id="number3">8</p>
+
+<script>
+    // Task 1
+    document.getElementById('Cat').onclick = function() {
+        alert(this.src);
+    };
+
+    document.getElementById('Home cat').onclick = function() {
+        alert(this.src);
+    };
+
+    document.getElementById('Happy cat').onclick = function() {
+        alert(this.src);
+    };
+
+    // Task 2
+    function addTitle(event) {
+        this.title = this.textContent;
+    }
+
+    function removeTitle(event) {
+        this.title = '';
+    }
+
+    document.getElementById('link1').addEventListener('mouseover', addTitle);
+    document.getElementById('link1').addEventListener('mouseout', removeTitle);
+    document.getElementById('link2').addEventListener
+    ('mouseover', addTitle);
+    document.getElementById('link2').addEventListener('mouseout', removeTitle);
+
+    document.getElementById('link3').addEventListener('mouseover', addTitle);
+    document.getElementById('link3').addEventListener('mouseout', removeTitle);
+
+    // Task 3
+    function addHref(event) {
+        this.textContent += ' (' + this.href + ')';
+    }
+
+    document.getElementById('link4').addEventListener('mouseover', addHref);
+    document.getElementById('link5').addEventListener('mouseover', addHref);
+    document.getElementById('link6').addEventListener('mouseover', addHref);
+
+    // Task 4
+    document.getElementById('link4').addEventListener('mouseover', function(event) {
+        this.removeEventListener('mouseover', addHref);
+    });
+
+    // Task 5
+    function displayInputValue(event) {
+        var demo = document.getElementById('demo');
+        demo.textContent = this.value;
+    }
+
+    document.getElementById('input1').addEventListener('blur', displayInputValue);
+    document.getElementById('input2').addEventListener('blur', displayInputValue);
+    document.getElementById('input3').addEventListener('blur', displayInputValue);
+
+    // Task 6
+    function showAlert(event) {
+        alert(this.value);
+        this.removeEventListener('click', showAlert);
+    }
+
+    document.getElementById('input7').addEventListener('click', showAlert);
+    document.getElementById('input8').addEventListener('click', showAlert);
+    document.getElementById('input9').addEventListener('click', showAlert);
+
+    // Task 7
+    function squareNumber(event) {
+        var number = parseInt(this.textContent);
+        this.textContent = number * number;
+    }
+
+    document.getElementById('number1').addEventListener('click', squareNumber);
+    document.getElementById('number2').addEventListener('click', squareNumber);
+    document.getElementById('number3').addEventListener('click', squareNumber);
+
+    // Task 8
+    function validateInputLength(event) {
+        var length = parseInt(this.getAttribute('data-length'));
+        if (this.value.length === length) {
+            this.classList.remove('red-border');
+            this.classList.add('green-border');
+        } else {
+            this.classList.remove('green-border');
+            this.classList.add('red-border');
+        }
+    }
+
+    document.getElementById('input4').addEventListener('blur', validateInputLength);
+    document.getElementById('input5').addEventListener('blur', validateInputLength);
+    document.getElementById('input6').addEventListener('blur', validateInputLength);
+</script>
+</body>
+</html>
+
