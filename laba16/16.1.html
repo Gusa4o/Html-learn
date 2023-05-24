@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body a{
+        display: flex;
+       
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+       
+    }
+
+
+</style>
+<body>
+    <a id="link1" href="#" title="Link 1">Link 1</a>
+    <a id="link2" href="#" title="Link 2">Link 2</a>
+    <a id="link3" href="#" title="Link 3">Link 3</a>
+    
+<script>
+const link1 = document.getElementById('link1');
+const link2 = document.getElementById('link2');
+const link3 = document.getElementById('link3');
+
+function addTitle(event) {
+  event.target.setAttribute('title', event.target.textContent);
+}
+
+function removeTitle(event) {
+  event.target.removeAttribute('title');
+}
+
+link1.addEventListener('mouseover', addTitle);
+link1.addEventListener('mouseout', removeTitle);
+
+link2.addEventListener('mouseover', addTitle);
+link2.addEventListener('mouseout', removeTitle);
+
+link3.addEventListener('mouseover', addTitle);
+link3.addEventListener('mouseout', removeTitle);
+
+</script>
+</body>
+</html>

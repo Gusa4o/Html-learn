@@ -10,11 +10,11 @@ function getCurrentTime() {
   minutes = (minutes < 10 ? "0" : "") + minutes;
   seconds = (seconds < 10 ? "0" : "") + seconds;
 
-  let weekdays = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+  let weekdays = ['Понеділок', 'Вівторок', 'Середа', 'Четверг', "П'ятниця", 'Субота', 'Неділя'];
   let dayOfWeek = weekdays[currentTime.getDay()];
 
   let dayOfMonth = currentTime.getDate();
-  let months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+  let months = ['січень', 'лютий', 'березень', 'квітень', 'травень', 'червень', 'липень', 'серпень', ' вересень', 'жовтень', ' листопад', 'грудень'];
   let month = months[currentTime.getMonth()];
 
   let year = currentTime.getFullYear();
@@ -38,7 +38,7 @@ function guessNumber() {
 
     while (true) {
       attempts++;
-      let userGuess = prompt("Guess a number from 0 to 100:");
+      let userGuess = prompt("Назвіть число від 0 до 100:");
 
       if (userGuess === null) {
         // User clicked "Cancel"
@@ -47,30 +47,30 @@ function guessNumber() {
       } else {
         let guess = parseInt(userGuess);
         if (isNaN(guess)) {
-          alert("Please enter a numeric value!");
+          alert("Виберіть інше число!");
         } else {
           if (guess === randomNumber) {
             console.log(`${new Date().toLocaleString()} Attempt ${attempts}: Number ${guess} - correct`);
-            alert(`Congratulations! You guessed the number in ${attempts} attempts! The secret number was: ${randomNumber}`);
+            alert(`НІЧОГО СОБІ! Ти відгадав з ${attempts} спроби! Загадане число: ${randomNumber}`);
             break;
           } else {
             let deviation = Math.abs(guess - randomNumber);
             let response = "";
 
             if (deviation < 10) {
-              response = "Very hot!";
+              response = "Дуже гаряче!";
             } else if (deviation < 20) {
-              response = "Hot!";
+              response = "Гаряче!";
             } else if (deviation < 30) {
-              response = "Warm";
+              response = "Холодно";
             } else if (deviation < 50) {
-              response = "Warmer";
+              response = "Холоднише";
             } else {
-              response = "Colder";
+              response = "Дуже холодно";
             }
 
             console.log(`${new Date().toLocaleString()} Attempt ${attempts}: Number ${guess} - incorrect`);
-            alert(`You didn't guess. ${response} Try again!`);
+            alert(`Ви не вгадали. ${response} Спробуйте ще!`);
           }
         }
       }
@@ -80,7 +80,7 @@ function guessNumber() {
       break;
     }
 
-    let playAgain = confirm("Play again?");
+    let playAgain = confirm("Граємо Далі?");
     if (!playAgain) {
       break;
     }
