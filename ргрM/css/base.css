@@ -8,7 +8,7 @@ body {
 	font-size: 18px;
     line-height: 21px;
 	color: #000000;
-	/* min-width: 1600px; */
+ min-width: 1600px; 
 }
 
 @media (max-width: 991px) {
@@ -16,14 +16,30 @@ body {
 		font-size: 18px;
 	}
 }
+     /* Add your adaptive styles here */
+		 @media screen and (max-width: 767px) {
+			/* Styles for smaller screens */
+			/* Example: Adjusting the layout or font sizes */
+	}
 
-/* Utility */
+	@media screen and (min-width: 768px) and (max-width: 1023px) {
+			/* Styles for medium-sized screens */
+			/* Example: Adjusting the layout or font sizes */
+	}
 
-/*.none {
+	@media screen and (min-width: 1024px) {
+			/* Styles for larger screens */
+			/* Example: Adjusting the layout or font sizes */
+	}
+	
+
+
+
+.none {
 	display: none !important;
-}*/
+}
 
-/*.visually-hidden {
+.visually-hidden {
 	position: absolute;
 	opacity: 0;
 	visibility: hidden;
@@ -33,7 +49,7 @@ body {
 	margin-left: -10000px;
 	background: transparent;
 	font-size: 0;
-}*/
+}
 
 /* Grid */
 
@@ -45,7 +61,7 @@ body {
 	margin-right: auto;
 }
 
-/*
+
 @media (max-width: 1399px) {
 	.container {
 		width: 100%;
@@ -65,4 +81,3 @@ body {
 .no-scroll {
 	overflow: hidden;
 }
-*/

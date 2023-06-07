@@ -35,3 +35,17 @@ let mySwiper = new Swiper('.swiper', {
         prevEl: ".swiper-button-p"
     }
 });
+
+window.addEventListener('resize', function() {
+    var elements = document.querySelectorAll('.adapt');
+    var screenWidth = window.innerWidth;
+  
+    elements.forEach(function(element) {
+      if (screenWidth <= 767) {
+        element.classList.add('adaptive');
+      } else {
+        element.classList.remove('adaptive');
+      }
+    });
+  });
+  
